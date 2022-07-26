@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Shoes Web</title>
+    <link rel="stylesheet" href="./style.css">
+   
+    <style>
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 250px;
+  display: block;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+.container {
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: red;
+  color: white;
+  padding: 0.5em 1.25em;
+  font-weight: 700;
+  border-radius: 0.25em;
+  
+  font-size: 1.125rem;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+  text-transform: capitalize;
+}
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+  background: rgb(255, 1, 141);
+}
+
+.main_title {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home {
+  text-align: center;
+  padding: 15em 0;
+
+    background-attachment: fixed;
+
+  background-image: url(./shoes_6.png);
+ background-position: center center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(1);
+
+
+
+
+}
+
+.spacing > * + * {
+  margin-top: 2rem;
+}
+.spilt{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+}
+.spilt>*{
+    flex-basis: 30% ;
+    min-width: 15em;
+
+}
+
+
+/* home thr end  */
+section{
+    padding: 5em 0;
+}
+
+.section_title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 5rem;
+    
+
+}
+
+.featured{
+    background: #eee;
+}
+.featured_item img{
+  margin: 10px auto;
+}
+.featured_item{
+  /* border: 1px solid #000; */
+    line-height: 1.3;
+    text-decoration: none;
+
+    color: black;
+    display: block;
+    position: relative;
+    transform: scale(0.85);
+    transition:  transform 250ms ease-in-out;
+    text-align: center;
+
+}
+
+.featured_item:hover,.featured_item:focus{
+    transform: scale(1);
+    
+}
+
+.featured_item::after{
+    content: '';
+    opacity: 1;
+    position: absolute;
+    padding: 70% 70% 0 0 ;
+    top: 10%;
+    left: 10%;
+    background: rgb(170, 214, 228);
+    z-index: -1;
+    /* border-radius: 50%; */
+}
+
+
+span{
+    display: block;
+    font-weight: 700;
+    font-size: 2.6rem;
+   
+}
+
+.featured_detail{
+  opacity: 0;
+}
+.featured_item:hover .featured_detail{
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+
+
+/* for product css  */
+
+
+.product{
+    background: gray;
+    border-radius: 2rem;
+    margin-bottom: 4em;
+    padding: 3rem;
+    text-align: center;
+     
+
+}
+.product_title{
+    font-size: 3rem;
+    line-height: 1.1;
+    color: white;
+  
+    text-transform: capitalize;
+   
+}
+.product_img {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.product img{
+    margin-top: -7em;
+    float: right;
+}
+
+.footer{
+  background: #000;
+  color: #eee;
+  height: 8vh;
+  width: 100vw;
+  text-align: center;
+  padding-top: 1em;
+
+
+}
+
+footer p {
+  text-align: center;
+ 
+ 
+}
+
+/* navigation css is here  */
+
+
+.sidebar {
+  display: inline-block;
+  height: 100%;
+ line-height: 1.6;
+  width: 0;
+
+  position: fixed;
+
+  z-index: 1;
+ 
+  top: 0;
+  right: 0;
+  background-color: #111;
+
+  overflow-x: hidden;
+ 
+  padding-top: 60px;
+  
+  transition: 0.5s;
+ 
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+ 
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+  border: 1.5px ridge white;
+  border-radius: 5%;
+
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+
+#main {
+  transition: margin-right .5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+
+  .sidebar a {
+      font-size: 18px;
+  }
+  .home{
+    background-attachment: fixed;
+  }
+
+}
+
+/* navigation css the end here  */
+
+
+
+/* contact css stat here */
+
+.featured_item::after{
+  background: none;
+}
+
+.contact_title{
+  font-size: 2rem;
+   text-transform: capitalize;
+   /* display: block;
+   text-align: center; */
+ 
+}
+    </style>
+</head>
+
+<body>
+    <!-- just navigation html here -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#home">HOME</a>
+        <a href="#featured">Featured Product</a>
+        <a href="#our_product">My product</a>
+        <a href="#contact_us">Contact Us</a>
+      </div>
+    
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; </button>
+        <!-- <h2>Collapsed Sidebar</h2>
+        <p>Content...</p> -->
+      </div>
+    
+
+    <!-- navigation the end here  -->
+
+    <header class="home" id="home">
+        <div class="container spacing">
+            <h1 class="main_title"> amazing shoes at an amazing price </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, esse.</p>
+            <a href="#" class="btn"> see what you want</a>
+
+        </div>
+    </header>
+    <section class="featured" id="featured">
+        <div class="container ">
+            <h2 class="section_title">featured product</h2>
+            <div class="spilt">
+                <a href="#" class="featured_item">
+                    <img src="./shoes_4.png" alt="" class="featured_img">
+                    <p class="featured_detail"> <span class="price">$99</span>Shoe name </p>
+                </a>
+                <a href="#" class="featured_item">
+                    <img src="./shoes_3.png" alt="" class="featured_img">
+                    <p class="featured_detail"> <span class="price">$99</span> Shoe name2</p>
+                </a>
+                <a href="#" class="featured_item">
+                    <img src="./shoes_2.png" alt="" class="featured_img">
+                    <p class="featured_detail"> <span class="price">$99</span>Shoe name 3</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="our_product " id="our_product">
+        <div class="container">
+            <h2 class="section_title"> our product</h2>
+            <article class="product spacing">
+                <img src="./shoes_6.png" alt="" class="product_img">
+                <h3 class="product_title">step shoes american</h3>
+                <p class="product_detail">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+                <a href="#" class="btn">buy now </a>
+            </article>
+            <article class="product spacing ">
+                <img src="./png_no9.png" alt="" class="product_img">
+                <h3 class="product_title">running Master shoes</h3>
+                <p class="product_detail">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+
+                <a href="#" class="btn">buy now</a>
+            </article>
+            <article class="product spacing ">
+                <img src="./png_nu_10.png" alt="" class="product_img">
+                <h3 class="product_title">naikii expert shoes</h3>
+                <p class="product_detail"> Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="#" class="btn">buy now </a>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact_us" id="contact_us">
+
+        <h2 class="section_title">Contact Us</h2>
+
+       <div class="container_contact">
+          <div class="spilt">
+           
+            <a href="https://wa.me/+923313074760/" class="featured_item">
+                <img src="./whatsapp_icon.png" alt="" class="featured_item">
+                <h3 class="contact_title">Whatsapp</h3>
+            </a>
+
+            <a href="http://www.instagram.com/learn_something_7777" class="featured_item">
+                <img src="./instagram_icon.png" alt="" class="featured_item">
+                <h3 class="contact_title">instagram</h3>
+            </a>
+            <a href="http://www.facebook.com/Sufyan Ahmed Khan" class="featured_item">
+                <img src="./facebook_icon.png" alt="" class="featured_item">
+                <h3 class="contact_title">facebook</h3>
+            </a>
+
+         
+          
+          </div>
+       </div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer_line">
+
+        <p>Copyright &copy; sufiyan033130@gmail.com</p>
+</div>
+    </footer>
+
+
+    <!-- javascript here  -->
+    <script>
+ 
+           
+
+      function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+  </script>
+
+</body>
+
+</html>
